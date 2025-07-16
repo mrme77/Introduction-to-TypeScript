@@ -5,17 +5,24 @@ enum weekDay {
   THURSDAY = "THURSDAY", 
   FRIDAY = "FRIDAY"
 };
-const employee : {
-  empName : string,
-  dependents : number,
-  committees : [string, boolean],
-  payDay : string
+
+const employee: {
+  empName: string,
+  dependents: number,
+  committees: [string, boolean],
+  payDay: string
 } = {
-  empName:"Axle",
-  dependents:2,
-  committees:["Philanthropy", true],
-  payDay : weekDay.FRIDAY
+  empName: "Axle",
+  dependents: 2,
+  committees: ["Philanthropy", true],
+  payDay: weekDay.FRIDAY
 };
-//employee.committees[0] = "hello";
+
+// Log to console
 console.log(employee);
 
+// Render to browser
+document.body.innerHTML = `
+  <h2>Employee Info</h2>
+  <pre>${JSON.stringify(employee, null, 2)}</pre>
+`;
