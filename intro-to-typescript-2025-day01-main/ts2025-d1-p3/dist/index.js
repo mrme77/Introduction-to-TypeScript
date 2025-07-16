@@ -1,4 +1,3 @@
-"use strict";
 var weekDay;
 (function (weekDay) {
     weekDay["MONDAY"] = "MONDAY";
@@ -8,11 +7,13 @@ var weekDay;
     weekDay["FRIDAY"] = "FRIDAY";
 })(weekDay || (weekDay = {}));
 ;
-const employee = {
+var employee = {
     empName: "Axle",
     dependents: 2,
     committees: ["Philanthropy", true],
     payDay: weekDay.FRIDAY
 };
-//employee.committees[0] = "hello";
+// Log to console
 console.log(employee);
+// Render to browser
+document.body.innerHTML = "\n  <h2>Employee Info</h2>\n  <pre>".concat(JSON.stringify(employee, null, 2), "</pre>\n");
